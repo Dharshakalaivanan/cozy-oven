@@ -1,0 +1,113 @@
+/* CategoryPage.css */
+
+.category-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.category-header {
+  font-size: 3rem; /* bigger header */
+  margin-bottom: 50px;
+  color: #d2691e; /* warm brown */
+}
+
+/* Cake Grid */
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* wider cards */
+  gap: 50px;
+  justify-items: center;
+}
+
+/* Individual Cake Card */
+.cake-card {
+  background-color: #fff8f0;
+  border-radius: 15px;
+  padding: 20px; /* more padding */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  width: 100%; /* full width of grid column */
+}
+
+.cake-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(50, 49, 49, 0.2);
+}
+
+.cake-image {
+  width: 100%;
+  height: 200px; /* taller images */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.cake-name {
+  font-size: 1.3rem; /* bigger font */
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #5a2d0c;
+}
+
+.cake-price {
+  font-size: 1.1rem; /* slightly bigger */
+  font-weight: 500;
+  color: #704214;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cake-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .cake-image {
+    height: 180px;
+  }
+
+  .category-header {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cake-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .cake-image {
+    height: 160px;
+  }
+
+  .category-header {
+    font-size: 2.2rem;
+  }
+
+  .cake-name {
+    font-size: 1.2rem;
+  }
+
+  .cake-price {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cake-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
+  .cake-image {
+    height: 140px;
+  }
+
+  .category-header {
+    font-size: 2rem;
+  }
+}

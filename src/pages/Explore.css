@@ -1,0 +1,186 @@
+/* Explore.css */
+
+/* General page styling */
+.explore-page {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.explore-header {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #d2691e; /* warm brown */
+}
+
+/* Category Cards */
+.category-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: #fff8f0;
+  border-radius: 12px;
+  padding: 15px;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #5a2d0c;
+}
+
+/* Featured Slider Container */
+.featured-slider {
+  margin: 0 auto 60px;
+  width: 90%;
+  max-width: 700px;  
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Each slider image wrapper */
+.featured-slider .slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;       /* let height scale with width */
+  background-color: #fff8f0;
+  border-radius: 12px;
+}
+
+/* Image inside slider */
+.featured-image {
+  width: 100%;
+  height: auto;        /* height scales automatically */
+  object-fit: contain; /* ensures whole image is visible */
+  border-radius: 12px;
+  display: block;
+}
+
+/* For very small screens, limit height to avoid extra space */
+@media (max-width: 480px) {
+  .featured-slider .slick-slide > div {
+    aspect-ratio: auto;   /* lets height shrink with width */
+    height: auto;
+  }
+
+  .featured-image {
+    object-fit: cover;    /* fill width nicely without big empty space */
+  }
+}
+
+/* Slick Dots Fix - Bringing them inside the image slightly */
+.slick-dots {
+  bottom: 15px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #ffffff !important; /* White dots look better on top of images */
+  opacity: 0.8;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* Cozy Quotes */
+.explore-quotes {
+  text-align: center;
+  font-style: italic;
+  color: #704214;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-cards {
+    gap: 15px;
+  }
+
+  .category-card {
+    width: 45%;
+  }
+
+  .featured-image {
+    height: 250px;
+  }
+
+  .explore-header {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    width: 100%;
+  }
+
+  .featured-image {
+    height: 200px;
+  }
+
+  .explore-header {
+    font-size: 1.8rem;
+  }
+
+  .explore-quotes {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-slider {
+    width: 95%;       /* smaller width for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-slider {
+    width: 90%;        /* narrower on small phones */
+    max-width: 350px;  /* optional, forces smaller width */
+  }
+
+  .featured-slider .slick-slide > div {
+    height: auto;      /* lets height scale with width */
+  }
+
+  .featured-image {
+    object-fit: contain; /* fit whole image nicely */
+  }
+}
